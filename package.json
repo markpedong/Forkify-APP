@@ -1,0 +1,28 @@
+{
+  "name": "forkify-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markpedong/Forkify-APP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markpedong/Forkify-APP/issues"
+  },
+  "homepage": "https://github.com/markpedong/Forkify-APP#readme",
+  "devDependencies": {
+    "parcel": "^2.0.0-beta.1",
+    "sass": "^1.26.10"
+  },
+  "dependencies": {
+    "core-js": "^3.20.3",
+    "regenerator-runtime": "^0.13.9"
+  }
+}
