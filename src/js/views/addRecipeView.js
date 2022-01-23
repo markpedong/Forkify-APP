@@ -2,6 +2,7 @@ import View from './View';
 
 class AddRecipeView extends View {
   _parentElement = document.querySelector('.upload');
+  _message = 'Recipe was Successfully uploaded';
   _window = document.querySelector('.add-recipe-window');
   _overlay = document.querySelector('.overlay');
   _btnOpen = document.querySelector('.nav__btn--add-recipe');
@@ -33,7 +34,6 @@ class AddRecipeView extends View {
       const dataArray = [...new FormData(this)];
       //   Converting array to objects
       const data = Object.fromEntries(dataArray);
-
       handler(data);
     });
   }
