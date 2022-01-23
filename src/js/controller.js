@@ -4,6 +4,7 @@ import searchView from './views/searchView.js';
 import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
 import bookmarksView from './views/bookmarksView.js';
+import addRecipeView from './views/addRecipeView.js';
 
 import 'core-js/stable'; //Polyfilling Everything Else
 import 'regenerator-runtime/runtime'; //Polyfilling Async/ Await
@@ -90,6 +91,16 @@ const controlBookMarks = function () {
   bookmarksView.render(model.state.bookmark);
 };
 
+const controlAddRecipe = async function (newRecipe) {
+  try {
+    // Uploading the new recipe data
+    await model.uploadRecipe(newRecipe);
+  } catch (err) {
+    console.error('🎆', err);
+    addRecipeView.renderError(err.message);
+  }
+};
+
 const init = function () {
   bookmarksView.addHandlerRender(controlBookMarks);
   recipeView.addHandlerRender(controlRecipes);
@@ -97,5 +108,6 @@ const init = function () {
   recipeView.addHandlerAddBookmark(controlAddBookmark);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView._addHandlerClick(controlPagination);
+  addRecipeView.addHandlerUpload(controlAddRecipe);
 };
 init();
